@@ -75,7 +75,21 @@ const columns = [
   { title: '患者级别', dataIndex: 'level', key: 'level' },
   { title: '临床表现', dataIndex: 'behavior', key: 'behavior' },
   { title: '主治医师', dataIndex: 'doctor', key: 'doctor' },
-  { title: '', key: 'operation', render: () => <a href="#/image/con-edit">会诊</a> },
+  {
+    title: '',
+    key: 'operation',
+    render: () => (
+      <a
+        href=""
+        onClick={e => {
+          e.preventDefault();
+          location.href = '#/image/con-edit';
+        }}
+      >
+        会诊
+      </a>
+    ),
+  },
 ];
 
 const data = [];
@@ -101,6 +115,7 @@ class ConTable extends Component {
         <Table
           className="components-table-demo-nested"
           columns={columns}
+          expandRowByClick
           expandedRowRender={expandedRowRender}
           dataSource={data}
         />

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Card, Layout, Row, Col, Icon, Divider } from 'antd';
 import Info from './Info';
-import History from './History';
+import ItemTable from './ItemTable';
 
 const { Content } = Layout;
 class ConEdit extends Component {
@@ -22,11 +22,8 @@ class ConEdit extends Component {
                 </span>
               }
               bordered={false}
-              extra={<History />}
             >
-              <Layout>
-                <Content>检查报告</Content>
-              </Layout>
+              <ItemTable />
             </Card>
           </Col>
           <Col span={12}>
