@@ -62,7 +62,6 @@ class ItemTable extends Component {
           columns={columns}
           dataSource={searchData}
           pagination={false}
-          scroll={{ y: 200 }}
           rowSelection={{ type: 'radio' }}
         />
         <br />

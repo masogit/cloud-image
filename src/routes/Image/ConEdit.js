@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { Card, Layout, Row, Col, Icon, Divider } from 'antd';
+import { Card, Row, Col, Icon, Divider } from 'antd';
 import Info from './Info';
 import ItemTable from './ItemTable';
+import ConForm from './ConForm';
 
-const { Content } = Layout;
 class ConEdit extends Component {
   render() {
     return (
@@ -50,9 +50,7 @@ class ConEdit extends Component {
                 </Fragment>
               }
             >
-              <Layout>
-                <Content>123123</Content>
-              </Layout>
+              <ConForm />
             </Card>
           </Col>
         </Row>

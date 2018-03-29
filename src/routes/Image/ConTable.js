@@ -93,7 +93,7 @@ const columns = [
 ];
 
 const data = [];
-for (let i = 0; i < 10; i += 1) {
+for (let i = 0; i < 8; i += 1) {
   data.push({
     key: i,
     id: 'C000003',
@@ -113,7 +113,6 @@ class ConTable extends Component {
     return (
       <div style={{ paddingTop: '20px' }}>
         <Table
-          className="components-table-demo-nested"
           columns={columns}
           expandRowByClick
           expandedRowRender={expandedRowRender}
