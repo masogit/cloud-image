@@ -32,10 +32,10 @@ class ConForm extends Component {
     return (
       <div style={{ paddingBottom: '12px' }}>
         <Form>
-          <Item label="会诊所见">
+          <Item label="报告所见">
             <TextArea placeholder="请输入你的会诊所见" rows={6} />
           </Item>
-          <Item label="会诊结论">
+          <Item label="报告结论">
             <TextArea placeholder="请输入你的会诊结论" rows={4} />
           </Item>
           <Item label="会诊医生" mode="multiple">
