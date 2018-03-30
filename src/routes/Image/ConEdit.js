@@ -3,6 +3,7 @@ import { Card, Row, Col, Icon, Divider } from 'antd';
 import Info from './Info';
 import ItemTable from './ItemTable';
 import ConForm from './ConForm';
+import ConTime from './ConTime';
 
 class ConEdit extends Component {
   render() {
@@ -17,9 +18,12 @@ class ConEdit extends Component {
           <Col span={12}>
             <Card
               title={
-                <span>
-                  <Icon type="bars" /> 检查
-                </span>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <div>
+                    <Icon type="bars" /> 会诊时间
+                  </div>
+                  <ConTime />
+                </div>
               }
               bordered={false}
             >

@@ -19,26 +19,26 @@ const notices = [
   },
   {
     id: '000000010',
-    title: '第三方紧急代码变更',
-    description: '冠霖提交于 2017-01-06，需在 2017-01-07 前完成代码变更任务',
-    extra: 'US',
-    status: 'urgent',
+    title: '2014-11-11 (C0000001)',
+    description: <div><b>结论</b>未见异常</div>,
+    extra: '体检套装A',
+    status: 'todo',
     type: '待办',
   },
   {
     id: '000000011',
-    title: '信息安全考试',
-    description: '指派竹尔于 2017-01-09 前完成更新并发布',
-    extra: 'MR',
-    status: 'doing',
+    title: '2013-11-11 (C0000002)',
+    description: <div><b>结论</b>未见异常</div>,
+    extra: '体检套装B',
+    status: 'todo',
     type: '待办',
   },
   {
     id: '000000012',
-    title: 'ABCD 版本发布',
-    description: '冠霖提交于 2017-01-06，需在 2017-01-07 前完成代码变更任务',
-    extra: 'CT',
-    status: 'processing',
+    title: '2012-11-11 (C0000003)',
+    description: <div><b>结论</b>未见异常</div>,
+    extra: '体检套装B',
+    status: 'todo',
     type: '待办',
   },
 ];
@@ -77,22 +77,15 @@ class History extends Component {
   render() {
     return (
       <NoticeIcon
-        icon="clock-circle-o"
-        label="所有检查 (5)"
+        icon="ellipsis"
         onItemClick={(item, tabProps) => {
           console.log(item, tabProps); // eslint-disable-line
         }}
         popupAlign={{ offset: [20, -16] }}
       >
         <NoticeIcon.Tab
-          list={noticeData['通知']}
-          title="未完成的"
-          emptyText="无数据"
-          emptyImage="https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg"
-        />
-        <NoticeIcon.Tab
           list={noticeData['待办']}
-          title="历史检查"
+          title="历史会诊"
           emptyText="无数据"
           emptyImage="https://gw.alipayobjects.com/zos/rmsportal/HsIsxMZiWKrNUavQUXqx.svg"
         />
