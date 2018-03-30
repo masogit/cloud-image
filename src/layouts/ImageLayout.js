@@ -14,6 +14,8 @@ import { getRoutes } from '../utils/utils';
 import Authorized from '../utils/Authorized';
 import { getMenuData } from '../common/menu';
 import logo from '../assets/ge_black.svg';
+import Home from '../routes/Image/Home';
+import ConEdit from '../routes/Image/ConEdit';
 
 const { Content, Header, Footer } = Layout;
 const { AuthorizedRoute, check } = Authorized;
@@ -98,14 +100,14 @@ class BasicLayout extends React.PureComponent {
     };
   }
   componentDidMount() {
-    enquireScreen(mobile => {
-      this.setState({
-        isMobile: mobile,
-      });
-    });
-    this.props.dispatch({
-      type: 'user/fetchCurrent',
-    });
+    // enquireScreen(mobile => {
+    //   this.setState({
+    //     isMobile: mobile,
+    //   });
+    // });
+    // this.props.dispatch({
+    //   type: 'user/fetchCurrent',
+    // });
   }
   getPageTitle() {
     const { routerData, location } = this.props;
@@ -184,7 +186,7 @@ class BasicLayout extends React.PureComponent {
           <GlobalHeader
             logo={logo}
             title="云影像诊断系统"
-            currentUser={currentUser}
+            currentUser={{ name: '李医生' }}
             fetchingNotices={fetchingNotices}
             notices={notices}
             collapsed={collapsed}
@@ -197,7 +199,10 @@ class BasicLayout extends React.PureComponent {
         </Header>
         <Content style={{ margin: '0 24px', height: '100%' }}>
           <Switch>
-            {redirectData.map(item => (
+            <Redirect exact from="/image" to="/image/consultation" />
+            <Route path="/image/consultation" component={Home} />
+            <Route path="/image/con-edit" component={ConEdit} />
+            {/* {redirectData.map(item => (
               <Redirect key={item.from} exact from={item.from} to={item.to} />
             ))}
             {getRoutes(match.path, routerData).map(item => (
@@ -210,7 +215,7 @@ class BasicLayout extends React.PureComponent {
                 redirectPath="/exception/403"
               />
             ))}
-            <Redirect exact from="/" to={bashRedirect} />
+            <Redirect exact from="/" to={bashRedirect} /> */}
             <Route render={NotFound} />
           </Switch>
         </Content>

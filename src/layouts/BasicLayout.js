@@ -99,14 +99,14 @@ class BasicLayout extends React.PureComponent {
     };
   }
   componentDidMount() {
-    enquireScreen(mobile => {
-      this.setState({
-        isMobile: mobile,
-      });
-    });
-    this.props.dispatch({
-      type: 'user/fetchCurrent',
-    });
+    // enquireScreen(mobile => {
+    //   this.setState({
+    //     isMobile: mobile,
+    //   });
+    // });
+    // // this.props.dispatch({
+    // //   type: 'user/fetchCurrent',
+    // // });
   }
   getPageTitle() {
     const { routerData, location } = this.props;
