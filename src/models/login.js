@@ -20,7 +20,7 @@ export default {
       // Login successfully
       if (response.status === 'ok') {
         reloadAuthorized();
-        yield put(routerRedux.push('/'));
+        yield put(routerRedux.push('/image/consultation'));
       }
     },
     *logout(_, { put, select }) {
