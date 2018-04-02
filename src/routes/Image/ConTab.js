@@ -11,7 +11,7 @@ class ConTab extends Component {
         <Tabs tabPosition="left" tabBarStyle={{ paddingTop: '50px' }}>
           <TabPane tab="待会诊" key="1">
             <Filter />
-            <ConTable />
+            <ConTable history={this.props.history} />
           </TabPane>
           <TabPane tab="未完成" key="2">
             Content of tab 2

@@ -61,37 +61,6 @@ const expandedRowRender = () => {
   return <Table columns={columns} dataSource={data} pagination={false} />;
 };
 
-const columns = [
-  { title: '会诊ID', dataIndex: 'id', key: 'id', sorter },
-  { title: '患者ID', dataIndex: 'patientId', key: 'patientId', sorter },
-  { title: '患者姓名', dataIndex: 'patient', key: 'patient', sorter },
-  { title: '年龄', dataIndex: 'age', key: 'age', sorter },
-  {
-    title: '性别',
-    dataIndex: 'sex',
-    key: 'sex',
-    filters: [{ text: '男', value: '男' }, { text: '女', value: '女' }],
-  },
-  { title: '患者级别', dataIndex: 'level', key: 'level' },
-  { title: '临床表现', dataIndex: 'behavior', key: 'behavior' },
-  { title: '主治医师', dataIndex: 'doctor', key: 'doctor' },
-  {
-    title: '',
-    key: 'operation',
-    render: () => (
-      <a
-        href=""
-        onClick={e => {
-          e.preventDefault();
-          location.href = '#/image/con-edit';
-        }}
-      >
-        会诊
-      </a>
-    ),
-  },
-];
-
 const data = [];
 for (let i = 0; i < 8; i += 1) {
   data.push({
@@ -109,11 +78,44 @@ for (let i = 0; i < 8; i += 1) {
 }
 
 class ConTable extends Component {
+  getColumns() {
+    return [
+      { title: '会诊ID', dataIndex: 'id', key: 'id', sorter },
+      { title: '患者ID', dataIndex: 'patientId', key: 'patientId', sorter },
+      { title: '患者姓名', dataIndex: 'patient', key: 'patient', sorter },
+      { title: '年龄', dataIndex: 'age', key: 'age', sorter },
+      {
+        title: '性别',
+        dataIndex: 'sex',
+        key: 'sex',
+        filters: [{ text: '男', value: '男' }, { text: '女', value: '女' }],
+      },
+      { title: '患者级别', dataIndex: 'level', key: 'level' },
+      { title: '临床表现', dataIndex: 'behavior', key: 'behavior' },
+      { title: '主治医师', dataIndex: 'doctor', key: 'doctor' },
+      {
+        title: '',
+        key: 'operation',
+        render: () => (
+          <a
+            href=""
+            onClick={e => {
+              e.preventDefault();
+              this.props.history.push('/image/con-edit')
+              // location.href = '#/image/con-edit';
+            }}
+          >
+            会诊
+          </a>
+        ),
+      },
+    ];
+  }
   render() {
     return (
       <div style={{ paddingTop: '20px' }}>
         <Table
-          columns={columns}
+          columns={this.getColumns()}
           expandRowByClick
           expandedRowRender={expandedRowRender}
           dataSource={data}

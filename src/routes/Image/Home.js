@@ -9,12 +9,12 @@ class ImageHome extends Component {
       <div>
         <Tabs>
           <TabPane tab={<span><Icon type="solution" />会诊列表</span>} key="consultation">
-            <ConTab />
+            <ConTab history={this.props.history} />
           </TabPane>
           <TabPane tab={<span><Icon type="contacts" />用户管理</span>} key="user">
             用户管理
           </TabPane>
-          <TabPane tab={<span><Icon type="profile" />会诊模板管理</span>}key="template">
+          <TabPane tab={<span><Icon type="profile" />会诊模板管理</span>} key="template">
             会诊模板管理
           </TabPane>
         </Tabs>
